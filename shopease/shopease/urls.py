@@ -22,7 +22,7 @@ urlpatterns = [
     path("blog/", include('blog.urls')),
 ]
 
-# whenever a django application is run, it first goes to this file (urls.py) and looks for the url to which request is made (shop/) in the urlpatterns array. When a match is found in the list, it understands that to get the further idea for the shop/ url, he needs to go to the urls file specified in the shop app directory.
+# whenever a django application is run, it first goes to this file (urls.py) {=> Reason ROOT_URLCONF = "shopease.urls"} and looks for the url to which request is made (shop/) in the urlpatterns array. When a match is found in the list, it understands that to get the further idea for the shop/ url, he needs to go to the urls file specified in the shop app directory.
 
 # This way of structuring the url patters is beneficial because:
 # If I have multiple urls of the shop app the url start with shop/ then django will get the path after shop/ from the shop.urls
