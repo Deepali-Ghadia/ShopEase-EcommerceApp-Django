@@ -27,3 +27,5 @@ urlpatterns = [
 # This way of structuring the url patters is beneficial because:
 # If I have multiple urls of the shop app the url start with shop/ then django will get the path after shop/ from the shop.urls
 # This way complete url paths of shop app are not disclosed in the urls.py of the main project.
+
+# include ==> aage ki kahani for shop/ k liye go to shop.urls
