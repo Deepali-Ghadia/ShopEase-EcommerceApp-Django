@@ -21,3 +21,9 @@ urlpatterns = [
     path("shop/", include('shop.urls')),
     path("blog/", include('blog.urls')),
 ]
+
+# whenever a django application is run, it first goes to this file (urls.py) and looks for the url to which request is made (shop/) in the urlpatterns array. When a match is found in the list, it understands that to get the further idea for the shop/ url, he needs to go to the urls file specified in the shop app directory.
+
+# This way of structuring the url patters is beneficial because:
+# If I have multiple urls of the shop app the url start with shop/ then django will get the path after shop/ from the shop.urls
+# This way complete url paths of shop app are not disclosed in the urls.py of the main project.
