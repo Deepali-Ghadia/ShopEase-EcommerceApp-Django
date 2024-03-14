@@ -6,24 +6,24 @@ def index(request):
     return render(request, 'shop/index.html')
 
 def about(request):
-    return HttpResponse("About Page of Shop App")
+    return render(request,'shop/about.html')
 
 
 def contact(request):
-    return HttpResponse("Contact Page of Shop App")
+    return render(request,'shop/contact.html')
 
 
 def tracker(request):
-    return HttpResponse("Tracker Page of Shop App")
+    return render(request,'shop/tracker.html')
 
 
 def search(request):
-    return HttpResponse("Search Page of Shop App")
+    return render(request,'shop/search.html')
 
 
 def view_product(request):
-    return HttpResponse("Product Details Page of Shop App")
+    return render(request,'shop/view_product.html')
 
 
 def checkout(request):
-    return HttpResponse("Checkout Page of Shop App")
+    return render(request,'shop/checkout.html')
