@@ -26,6 +26,11 @@ urlpatterns = [
     path("blog/", include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+# static(): This is a function provided by Django for serving static files during development. It takes two arguments:
+# settings.MEDIA_URL: This is the URL prefix for serving media files. It's defined in the Django settings file (settings.py). For example, if MEDIA_URL is set to '/media/', then media files will be served under URLs starting with /media/.
+# document_root=settings.MEDIA_ROOT: This specifies the directory from which to serve media files. It's also defined in the Django settings file (settings.py) as MEDIA_ROOT. This directory is typically where uploaded media files are stored on the server.
+
 # whenever a django application is run, it first goes to this file (urls.py) {=> Reason ROOT_URLCONF = "shopease.urls"} and looks for the url to which request is made (shop/) in the urlpatterns array. When a match is found in the list, it understands that to get the further idea for the shop/ url, he needs to go to the urls file specified in the shop app directory.
 
 # This way of structuring the url patters is beneficial because:
