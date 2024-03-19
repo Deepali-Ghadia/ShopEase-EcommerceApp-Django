@@ -132,4 +132,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # default location for uploading media files.
 # this is created by me
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
+MEDIA_URL = "/media/" 
+# due to the above line, whenever we try to access any media file of shop app, the url will be something like this http://127.0.0.1:8000/media/shop/images/WhatsApp_Image_2023-05-24_at_1.39.16_PM.jpeg
