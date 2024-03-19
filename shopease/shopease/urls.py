@@ -16,12 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/',admin.site.urls),
     path("shop/", include('shop.urls')),
     path("blog/", include('blog.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # whenever a django application is run, it first goes to this file (urls.py) {=> Reason ROOT_URLCONF = "shopease.urls"} and looks for the url to which request is made (shop/) in the urlpatterns array. When a match is found in the list, it understands that to get the further idea for the shop/ url, he needs to go to the urls file specified in the shop app directory.
 
