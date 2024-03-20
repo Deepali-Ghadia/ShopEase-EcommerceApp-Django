@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog",
-    "shop"
+    # "shop",
+    "shop.apps.ShopConfig" 
+    # To include the app in our project, we need to add a reference to its configuration class in the INSTALLED_APPS setting.
+    
     # adding both the apps that I have created.
 ]
 
