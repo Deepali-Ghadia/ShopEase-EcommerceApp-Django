@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 # Create your views here.
 def index(request):
-    return render(request, 'shop/index.html')
+    products = Product.objects.all() # fetching products from the database
+    # logic to create grids based on number of products
+    no_of_products = len(products)
+    params = {"products":products}
+    return render(request, 'shop/index.html',params)
 
 def about(request):
     return render(request,'shop/about.html')
