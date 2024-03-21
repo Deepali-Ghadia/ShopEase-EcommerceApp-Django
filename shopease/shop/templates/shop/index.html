@@ -28,72 +28,22 @@
 {% load static %} 
     <!-- creating a grid layout and each grid will show the product in card format -->
     <div class="grid-container">
-      <!-- first grid item -->
-      <div class="grid-item">
-        <!-- card to display 1st product -->
-        <div class="card" style="width: 18rem;">
-          <img src="{%static 'shop/watch.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">1st Product</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-item" >
-        <!-- second grid item -->
-        <!-- card to display 2nd product -->
-        <div class="card" style="width: 18rem;" >
-          <img src="{%static 'shop/watch.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">2nd Product</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+      <!-- since grid-item is repeating for each product, therefore we can run for loop from 1 to no of products in the database and create grid item for it -->
       
-
+      {% for product in products%}
       <div class="grid-item">
-        <!-- Third grid item -->
-        <!-- card to display 3rd product -->
-        <div class="card" style="width: 18rem;"  >
-          <img src="{%static 'shop/watch.jpg' %}" class="card-img-top" alt="...">
+        <div class="card" style="width: 18rem;">
+          <img src='/media/{{product.image}}' class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">3rd Product</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">{{product.product_name}}</h5>
+            <p class="card-text">{{product.desc}}</p>
+            <p class="card-text">Price: {{product.price}} Rs</p>
+            <a href="#" class="btn btn-primary">Buy</a>
           </div>
         </div>
       </div>
-
-
-      <div class="grid-item">
-        <!-- Fourth grid item -->
-        <!-- card to display 4th product -->
-        <div class="card" style="width: 18rem;">
-          <img src="{%static 'shop/watch.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">4th Product</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div> 
-
-      <div class="grid-item">
-        <!-- Fifth grid item -->
-        <!-- card to display 5th product -->
-        <div class="card" style="width: 18rem;">
-          <img src="{%static 'shop/watch.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">5th Product</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+      
 
     </div>
 
